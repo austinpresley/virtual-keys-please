@@ -2,16 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0"><dict>
 <key>CFBundleIdentifier</key><string>com.apresley.virtualkeysplease</string>
-<key>CFBundleName</key><string>VirtualKeysPlease</string>
-<key>CFBundleDisplayName</key><string>VirtualKeysPlease</string>
+<key>CFBundleName</key><string>Virtual Keys Please</string>
+<key>CFBundleDisplayName</key><string>Virtual Keys Please</string>
 <key>CFBundleExecutable</key><string>VirtualKeysPlease</string>
 <key>CFBundleIconFile</key><string>AppIcon</string>
 <key>CFBundleIconName</key><string>AppIcon</string>
 <key>CFBundlePackageType</key><string>APPL</string>
-<key>CFBundleShortVersionString</key><string>0.1</string>
+<key>CFBundleShortVersionString</key><string>1.0</string>
 <key>CFBundleVersion</key><string>__BUILD__</string>
-<key>LSMinimumSystemVersion</key><string>26.0</string>
+<key>LSMinimumSystemVersion</key><string>13.0</string>
 <key>LSApplicationCategoryType</key><string>public.app-category.productivity</string>
 <key>NSHighResolutionCapable</key><true/>
 <key>NSPrincipalClass</key><string>NSApplication</string>
+<key>CFBundleDocumentTypes</key><array><dict>
+<key>CFBundleTypeName</key><string>Stream Deck application</string>
+<key>CFBundleTypeRole</key><string>Viewer</string>
+<key>LSHandlerRank</key><string>Alternate</string>
+<key>LSItemContentTypes</key><array><string>com.apple.application-bundle</string></array>
+</dict></array>
+<key>NSHumanReadableCopyright</key><string>Copyright © 2026 Austin Presley</string>
 </dict></plist>

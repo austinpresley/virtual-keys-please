@@ -3,10 +3,11 @@ import PackageDescription
 
 let package = Package(
     name: "VirtualKeysPlease",
-    platforms: [.macOS(.v26)],
+    platforms: [.macOS(.v13)],
     targets: [
         // Rules and data logic with no SwiftUI, so tests run without the app.
-        .target(name: "VirtualKeysPleaseKit"),
+        .target(name: "VKPCrypto"),
+        .target(name: "VirtualKeysPleaseKit", dependencies: ["VKPCrypto"]),
         .executableTarget(
             name: "VirtualKeysPlease",
             dependencies: ["VirtualKeysPleaseKit"],

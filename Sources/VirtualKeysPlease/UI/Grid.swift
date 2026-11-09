@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 /// The spacing scale. Every padding, spacing, and size sits on a 4 pt grid.
 ///   APP_GRID=1 VirtualKeysPlease     draw the grid, margins, and probes over the window
@@ -30,8 +31,7 @@ extension View {
 }
 
 /// Frames of every probe on screen, in window points with the origin at the top left.
-@Observable
-final class GridProbes {
+final class GridProbes: ObservableObject {
     static let shared = GridProbes()
     static let enabled = ProcessInfo.processInfo.environment["APP_SNAPSHOT"] != nil
         || GridOverlay.enabled
@@ -50,7 +50,7 @@ final class GridProbes {
         var height: Double
     }
 
-    private(set) var probes: [String: Probe] = [:]
+    @Published private(set) var probes: [String: Probe] = [:]
     /// Which view instance owns each key, so a view that leaves after its
     /// replacement arrived does not remove the replacement's frame.
     private var owners: [String: UUID] = [:]
@@ -130,7 +130,7 @@ struct GridOverlay: View {
                                        style: StrokeStyle(lineWidth: 1, dash: [4, 4]))
                     } else {
                         context.stroke(Path(rect), with: .color(.pink.opacity(0.8)), lineWidth: 1)
-                        context.draw(Text(probe.name).font(.system(size: 9, weight: .medium)).foregroundStyle(.pink),
+                        context.draw(Text(probe.name).font(.system(size: 9, weight: .medium)).foregroundColor(.pink),
                                      at: CGPoint(x: rect.minX + 2, y: rect.minY - 6), anchor: .leading)
                     }
                 }
