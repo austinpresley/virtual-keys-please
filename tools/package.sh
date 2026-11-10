@@ -7,6 +7,7 @@ stage=$(mktemp -d)
 trap 'rm -rf "$stage"' EXIT
 ditto "$app" "$stage/Virtual Keys Please.app"
 cp "$repo/Resources/How it works.html" "$stage/Start here.html"
+cp "$repo/THIRD_PARTY_NOTICES.txt" "$stage/Third-party notices.txt"
 dmg="$repo/dist/Virtual Keys Please.dmg"
 hdiutil create -volname 'Virtual Keys Please' -srcfolder "$stage" -format UDZO -ov "$dmg"
 identity=${SIGN_IDENTITY:-}

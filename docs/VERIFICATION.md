@@ -26,3 +26,13 @@ Only Apple Silicon hardware has been tested live. Intel hardware, older macOS
 versions and unreleased Stream Deck versions remain unverified. Compatibility
 requires the recognized activation constant, key derivation and record format.
 Notarization and final disk-image checks are recorded in the local release receipt.
+
+## Public package 1.0.1
+
+The first public package adds the BAMA template's required third-party notice
+to the source, app resources and disk image. Activation behavior is unchanged.
+The universal rebuild and isolated self-test pass. The GitHub README uses
+matching light/dark artwork, a short animated key party, static Reduced Motion
+alternatives, an app preview and direct release-download links. Git history was
+scanned for credential patterns before publication; private activation records,
+machine identifiers, analysis captures and generated builds are not in Git.
